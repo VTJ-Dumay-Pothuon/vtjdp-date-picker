@@ -1,0 +1,25 @@
+{
+  "name": "@vtjdp/date-picker",
+  "version": "1.0.4",
+  "description": "A simple input with a built-in popup calendar to set a date in one click",
+  "main": "dist/DatePicker.jsx",
+  "keywords": [
+    "react",
+    "reactjs",
+    "datepicker",
+    "module",
+    "calendar",
+    "date",
+    "input"
+  ],
+  "author": "VTJ Dumay-Pothuon",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "prop-types": "15.8.1"
+  },
+  "files": [
+    "dist",
+    "index.d.ts"
+  ]
+}
