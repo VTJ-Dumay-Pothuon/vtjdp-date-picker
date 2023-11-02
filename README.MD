@@ -24,4 +24,6 @@ The date picker component accepts the following parameters:
 | lang          | The language that will be used for the month display. | ISO 639-1 codes      | 'default'         |
 | format        | The format for the date : standard, US, or ISO        | DMY | MDY | YMD      | 'DMY'             |
 | start         | The first day of the week displayed in the calendar.  | day names in english | 'monday'          |
+
+
 lang: 'default' means that the language will be the one of the browser.
