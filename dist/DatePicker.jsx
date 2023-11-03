@@ -2,11 +2,21 @@ import { useState, useRef, useEffect } from 'react'
 
 import PropTypes from 'prop-types'
 
-const DatePicker = ({ lang = 'default', format = 'DMY', start = 'monday' }) => {
-  DatePicker.propTypes = { 
+const DatePicker = (
+{ 
+  onChange = () => {}, value, style,
+  lang = 'default', format = 'DMY', start = 'monday',
+  id='date-picker',className='date-picker'
+}) => {
+  DatePicker.propTypes = {
+    onChange: PropTypes.func,
+    value: PropTypes.string,
+    style: PropTypes.object,
     lang: PropTypes.string,
     format: PropTypes.string,
-    start: PropTypes.string
+    start: PropTypes.string,
+    id: PropTypes.string,
+    className: PropTypes.string,
   }
   // Whether the popup is displayed or not
   const [popupDisplay, setPopupDisplay] = useState(false)
@@ -144,6 +154,7 @@ const DatePicker = ({ lang = 'default', format = 'DMY', start = 'monday' }) => {
     `${day}/${month}/${chosenYear}`
 
     inputFieldRef.current.value = newDate
+    onChange(newDate)
     setPopupDisplay(false)
   }
 
@@ -230,8 +241,17 @@ const DatePicker = ({ lang = 'default', format = 'DMY', start = 'monday' }) => {
   }
 
   return (
-    <div>
-      <input type="text" ref={inputFieldRef} onFocus={handleInputFocus} />
+    <React.Fragment>
+      <input 
+        id={id}
+        className={className}
+        style={style}
+        type="text"
+        value={value}
+        ref={inputFieldRef}
+        onFocus={handleInputFocus}
+        onChange={(date) => onChange(date.target.value)}
+      />
     <dialog id="popup" className="date-picker-popup" ref={popupRef}
         style={{ 
             height: '190px',
@@ -283,7 +303,7 @@ const DatePicker = ({ lang = 'default', format = 'DMY', start = 'monday' }) => {
 
         {daysOfTheMonth()}
       </dialog>
-    </div>
+    </React.Fragment>
   )
 }
 
