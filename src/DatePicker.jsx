@@ -172,7 +172,6 @@ const DatePicker = (
     }
     if (currentMonth + 1 === 2) {
       monthLength = isLeapYear(chosenYear) ? 29 : 28
-      previousMonthLength = isLeapYear(chosenYear) ? 29 : 28
     }
     if (currentMonth + 1 === 3) {
       previousMonthLength = isLeapYear(chosenYear) ? 29 : 28
