@@ -1,6 +1,6 @@
 {
   "name": "@vtjdp/date-picker",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A simple input with a built-in popup calendar to set a date in one click",
   "main": "dist/DatePicker.min.js",
   "types": "index.d.ts",
