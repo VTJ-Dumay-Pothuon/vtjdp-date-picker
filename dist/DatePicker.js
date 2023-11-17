@@ -1,5 +1,18 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
+
+/**
+ * DatePicker is the combination of an input with a date selection popup modal.
+ * @constructor
+* @callback onChange - function called when the date is changed
+* @param {string} value - value of the input field trasmitted by the onChange callback
+* @param {Object} style - inline style object for the input field
+* @param {string} lang - language used by the calendar (default: browser language)
+* @param {string} format - format of the date string (default: 'DMY' for DD/MM/YYYY)
+* @param {string} start - first day of the week (default: 'monday')
+* @param {string} id - id of the input field
+* @param {string} className - class(es) of the input field
+ */
 const DatePicker = ({
   onChange = () => {},
   value,
